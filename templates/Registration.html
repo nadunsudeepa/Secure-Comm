@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+	<title>Register</title>
+</head>
+<body>
+	{% include 'header.html' %}
+	<br>
+	<section class="heading">
+		<h3>Signup Page</h3>
+		<p><a href="{{url_for('Registration')}}">home</a> / register</p>
+	</section><br>
+	
+	<div class="contact">
+		
+		<form method="post" action="{{url_for('Registration')}}">
+			<h3>signup here!</h3><br>
+			<input type="text" name="username" placeholder="Enter your name" class="box" required><br>
+			<input type="email" name="email" placeholder="Enter your email" class="box" required><br>
+			<input type="password" name="password" placeholder="Enter your password" class="box" required><br>
+			<input type="password" name="cpass" placeholder="Enter again password" class="box" required><br>
+			
+			
+		    
+		    <h4>Select Role:  </h4>
+		    <select name="role" id="role" class="box" required>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option> 
+            </select>
+            <br>
+            <br>
+		    <input type="submit" class="button">
+			<br>
+			<br>
+			{% if mesage is defined and mesage %}
+				<div class ="message" style="font-size: 2.0rem;">{{mesage}}</div>
+			{% endif %}
+		</form>
+	</div>
+</body>
+</html>

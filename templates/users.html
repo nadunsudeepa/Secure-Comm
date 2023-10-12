@@ -1,0 +1,33 @@
+<head>
+    
+
+	<title>Users</title>
+</head>
+<body>
+    {% include 'header.html' %}
+	<br>
+	<section class="heading">
+		<h3>total users</h3>
+		<p><a href="{{url_for('Registration')}}">home</a> / users</p>
+	</section>
+
+    <table class="styled-table">
+        
+        <tr class="theader">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Role</th>
+        </tr>
+		{% for user in userDetails %}
+        <tr>
+            <td>{{user[0]}}</td>
+            <td>{{user[1]}}</td>
+            <td>{{user[2]}}</td>
+            <td>{{user[3]}}</td>
+            <td>{{user[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Recieved Message</title>
+</head>
+<body>
+    {% include 'header.html' %}
+	<br>
+	<section class="heading">
+		<h3>Recived Message</h3>
+		<p><a href="{{url_for('Registration')}}">home</a> / recived message</p>
+	</section><br>
+    <div class="contact">
+		
+		<form method="post" action="{{url_for('RecivedMessage')}}">
+			<h3>recived message!</h3><br>
+            <input type="email" name="email" placeholder="Enter your email" class="box" required><br>
+			<input type="password" name="password" placeholder="Enter your password" class="box" required><br>
+			
+            <br>
+            <br>
+		    <input type="submit" class="button"><br>
+            <br>
+            <h4 name="msgview">Display Message</h4>
+            <br>
+            <br>
+            <output type="textarea" name="display" class="box" >{{Data}}</output>
+            <br>
+            <br>
+            <br>
+            {% if mesage is defined and mesage %}
+                <div class ="message" style="font-size: 2.0rem;">{{mesage}}</div>
+            {% endif %}
+		</form>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+	<title>Send Message</title>
+</head>
+<body>
+   {% include 'header.html' %}
+	<br>
+	<section class="heading">
+		<h3>Send Message</h3>
+		<p><a href="{{url_for('Registration')}}">home</a> / send message</p>
+	</section>
+	<br>
+
+   <div class="contact">
+		
+		<form method="post" action="{{url_for('SendMessage')}}">
+			<h3>send message!</h3><br>
+         <input type="text" name="message" placeholder="Enter message" class="box" required><br>
+			
+			
+		    
+		    <h4>Select Role:  </h4>
+		    <select name="role" id="role" class="box" required>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option> 
+            </select>
+            <br>
+            <br>
+		    <input type="submit" class="button">
+          <br>
+          <br>
+          {% if mesage is defined and mesage %}
+               <div class ="message" style="font-size: 2.0rem;">{{mesage}}</div>
+          {% endif %}
+		</form>
+	</div>
+
+	
+</body>
+</html>
